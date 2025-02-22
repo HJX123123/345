@@ -1,0 +1,14 @@
+defaults:
+  - model_params: simvae
+  - data_params: sim
+  - exp_params: sim
+  - trainer_params: sim_trainer
+
+hydra:
+  run:
+    dir: logs/${data_params.name}/${model_params.name}/lr${exp_params.LR}_wd${exp_params.weight_decay}_kld${exp_params.kld_weight}_epo${trainer_params.max_epochs}/seed${exp_params.manual_seed}
+  sweep:
+    dir: logs/${data_params.name}/${model_params.name}
+    subdir: lr${exp_params.LR}_wd${exp_params.weight_decay}_kld${exp_params.kld_weight}_schedgamma${exp_params.scheduler_gamma}_epo${trainer_params.max_epochs}/seed${exp_params.manual_seed}
+  job:
+    chdir: true

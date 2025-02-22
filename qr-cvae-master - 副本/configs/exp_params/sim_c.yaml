@@ -1,0 +1,7 @@
+
+name: "with_cond"
+LR: 0.001
+weight_decay: 0.0
+scheduler_gamma: null
+kld_weight: 0.1
+manual_seed: 52

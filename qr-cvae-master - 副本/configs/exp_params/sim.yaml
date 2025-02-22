@@ -1,0 +1,6 @@
+name: "without_conditioning"
+LR: 0.001
+weight_decay: 0.0
+scheduler_gamma: null
+kld_weight: 1.0
+manual_seed: 42

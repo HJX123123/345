@@ -1,0 +1,30 @@
+model_params:
+  name: 'SimVAE'
+  latent_dim: 2
+  hidden_dim: 50
+
+data_params:
+  name: "sim_cond"
+  data_path: "data/simple_sim_c/"
+  train_batch_size: 500
+  val_batch_size:  500
+  num_workers: 0
+
+
+exp_params:
+  name: "with_cond"
+  LR: 0.001
+  weight_decay: 0.0
+  # scheduler_gamma: 0.95
+  kld_weight: 0.1
+  manual_seed: 52
+
+trainer_params:
+  devices: [0]
+  log_every_n_steps: 1
+  max_epochs: 400
+
+logging_params:
+  save_dir: "logs/"
+  name: "SimVAE"
+  
